@@ -1,0 +1,44 @@
+# Secrets — ne JAMAIS commiter
+.env
+.streamlit/secrets.toml
+
+# Modèles entraînés (trop lourds pour Git → HuggingFace Hub)
+models/*.pt
+models/*.pth
+models/*.h5
+models/*.pkl
+
+# Données brutes et cache
+data/raw/
+data/processed/
+*.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environnements virtuels
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Notebooks de développement (facultatif)
+notebooks/
+*.ipynb

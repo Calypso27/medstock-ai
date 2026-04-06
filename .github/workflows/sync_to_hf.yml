@@ -1,0 +1,20 @@
+name: Sync to HuggingFace Spaces
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push to HuggingFace Space
+        run: |
+          git remote add space https://Calypso-MB:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/Calypso-MB/medstock-ai
+          git push space main --force
